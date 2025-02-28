@@ -22,10 +22,14 @@ const donorSchema = mongoose.Schema({
         type:String,
         required:[true,"Please enter the gender"]
     },
-    address:{
-     type:String,
-     required:[true,"Please enter the address"]
+    height:{
+     type:Number,
+     required:[true,"Please enter the height"]
     },
+    weight:{
+        type:Number,
+        required:[true,"Please enter the height"]
+       },
     chronic:{
         type:String,
         required:[true,"Please enter the chronic disease"]

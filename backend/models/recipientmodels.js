@@ -22,10 +22,14 @@ const recipientSchema = mongoose.Schema({
         type:String,
         required:[true,"Please enter the gender"]
     },
-    address:{
-     type:String,
-     required:[true,"Please enter the address"]
-    },
+    height:{
+        type:Number,
+        required:[true,"Please enter the height"]
+       },
+       weight:{
+           type:Number,
+           required:[true,"Please enter the height"]
+          },
     bloodGroup: {
         type: String,
         enum: ['A+', 'A-', 'B+', 'B-', 'O+', 'O-', 'AB+', 'AB-'],
@@ -42,10 +46,6 @@ const recipientSchema = mongoose.Schema({
         required: true
     },
 
-    doctorName:{
-        type:String,
-        required: true,
-    },
     hospitalName:{
         type:String,
         required: true,

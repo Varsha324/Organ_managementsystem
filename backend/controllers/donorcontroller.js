@@ -11,10 +11,10 @@ const getDonor = asyncHandler(async(req, res) => {
 const createDonors = asyncHandler(async(req,res)=>
     {
         const{name,age,email,contactNumber,gender,address,
-        chronic,bloodGroup,medicationPdfUrl,location,typeOfDonation,
+        chronic,bloodGroup,medicationPdfUrl,height,weight,typeOfDonation,
         consent, informationAccuracy} = req.body;
         if(!name||!age||!email||!contactNumber||!gender||!address||
-            !chronic||!bloodGroup||!medicationPdfUrl||!location||!typeOfDonation||
+            !chronic||!bloodGroup||!medicationPdfUrl||!height||!weight||!typeOfDonation||
             !consent||!informationAccuracy)
             {
                 res.status(400);
@@ -22,7 +22,7 @@ const createDonors = asyncHandler(async(req,res)=>
             }
         const donor = await Donor.create({
         name,age,email,contactNumber,gender,address,
-        chronic,bloodGroup,medicationPdfUrl,location,typeOfDonation,otherDonation,
+        chronic,bloodGroup,medicationPdfUrl,height,weight,typeOfDonation,otherDonation,
         consent, informationAccuracy
         });
         res.status(201).json(donor);

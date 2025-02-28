@@ -11,10 +11,10 @@ const getRecipient = asyncHandler(async(req, res) => {
 const createRecipients = asyncHandler(async(req,res)=>
     {
         const{name,age,email,contactNumber,gender,address,
-        bloodGroup,requiredTissueType, urgencyLevel, doctorName,hospitalName,allergy,location,
+        bloodGroup,requiredTissueType, urgencyLevel, doctorName,hospitalName,allergy,height,weight,
         consent, informationAccuracy} = req.body;
         if(!name||!age||!email||!contactNumber||!gender||!address||!bloodGroup||
-            !requiredTissueType||!urgencyLevel||!doctorName||!hospitalName||!allergy||!location||
+            !requiredTissueType||!urgencyLevel||!doctorName||!hospitalName||!allergy||!height||!weight||
             !consent||!informationAccuracy)
             {
                 res.status(400);
@@ -22,7 +22,7 @@ const createRecipients = asyncHandler(async(req,res)=>
             }
         const recipient = await Recipient.create({
         name,age,email,contactNumber,gender,address,bloodGroup,
-        requiredTissueType,urgencyLevel,doctorName,hospitalName,allergy,location,
+        requiredTissueType,urgencyLevel,doctorName,hospitalName,allergy,height,weight,
         consent, informationAccuracy
         });
         res.status(201).json(recipient);
